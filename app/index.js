@@ -1,8 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import routes from "./config/routes"
 
-const Hello = (props) => {
-  return <h1>Hello!</h1>
-}
-
-ReactDOM.render(<Hello />, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById("app"));
