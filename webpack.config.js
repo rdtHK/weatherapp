@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + "/app/index.html",
   filename: "index.html",
-  inject: "body"
+  inject: "body",
 });
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -16,7 +16,8 @@ module.exports = {
   ],
   output: {
     path: __dirname + "/dist",
-    filename: "js/[hash]-bundle.js"
+    filename: "js/[hash]-bundle.js",
+    publicPath: '/'
   },
   // devtool: "inline-source-map",
   module: {
@@ -35,15 +36,15 @@ module.exports = {
         loader: extractCSS.extract(["css?sourceMap", "sass?sourceMap"])
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         loaders: [
           "file?name=img/[hash]-[name].[ext]",
           "image-webpack"
         ]
       },
       {
-        test: /\.(eot|woff2?|ttf)$/i,
-        loader: "file?name=font/[hash]-[name].[ext]"
+        test: /\.(eot|woff2?|ttf|svg)$/i,
+        loader: "file?name=fonts/[hash]-[name].[ext]"
       }
     ]
   },
