@@ -1,7 +1,7 @@
 import React from "react";
 
 const LocationForm = (props) => {
-  var classes = 'location-form';
+  let classes = 'location-form';
 
   if (props.inline) {
     classes += ' location-form--inline';
