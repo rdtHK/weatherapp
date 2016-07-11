@@ -1,12 +1,13 @@
 import React from "react";
-
-import image from "../assets/images/image.png";
+import LocationForm from "./locationForm";
 
 export default (props) => {
   return (
-    <div>
-      Home
-      <img src={image} />
+    <div className="home">
+      <h2 className="home__title">
+        Enter a City and State
+      </h2>
+      <LocationForm />
     </div>
   );
 };
