@@ -19,7 +19,7 @@ module.exports = {
     filename: "js/[hash]-bundle.js",
     publicPath: '/'
   },
-  // devtool: "inline-source-map",
+  devtool: "source-map",
   module: {
     loaders: [
       {
