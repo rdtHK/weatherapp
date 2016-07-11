@@ -1,15 +1,24 @@
+import axios from "axios";
 
 const appId = 'cd616a825a318a4593a6b285c07aa867';
 
-
 export const currentWeather = (cityName) => {
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&type=accurate&APPID=${appId}`;
-
-  return url;
+  return axios.get('http://api.openweathermap.org/data/2.5/weather', {
+    params: {
+      q: cityName,
+      type: 'accurate',
+      APPID: appId,
+    }
+  });
 };
 
 export const forecast = (cityName, days) => {
-  const url = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&type=accurate&APPID=${appId}&cnt=${days}`;
-
-  return url;
+  return axios.get('http://api.openweathermap.org/data/2.5/forecast/daily', {
+    params: {
+      q: cityName,
+      cnt: days,
+      type: 'accurate',
+      APPID: appId,
+    }
+  });
 };

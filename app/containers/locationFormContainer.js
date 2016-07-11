@@ -11,7 +11,13 @@ export default class LocationFormContainer extends React.Component {
 
     const place = event.target.elements['place'].value;
 
-    console.log(forecast(place, 5));
+    forecast(place, 5)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render () {
