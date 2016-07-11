@@ -2,6 +2,8 @@ import React from "react";
 
 import LocationForm from "../components/locationForm";
 
+import {forecast} from "../helpers/apiHelpers";
+
 export default class LocationFormContainer extends React.Component {
 
   handleSubmit(event) {
@@ -9,7 +11,7 @@ export default class LocationFormContainer extends React.Component {
 
     const place = event.target.elements['place'].value;
 
-    console.log(place);
+    console.log(forecast(place, 5));
   }
 
   render () {
