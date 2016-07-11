@@ -1,11 +1,24 @@
 import React from "react";
 
-export default (props) => {
-  var classes = (props.inline?'location-form--inline': '') + ' location-form';
+const LocationForm = (props) => {
+  var classes = 'location-form';
+
+  if (props.inline) {
+    classes += ' location-form--inline';
+  }
+
   return (
-    <div className={classes}>
-      <input type="search" className="location-form__input" placeholder="St. George, Utah"/>
-      <button type="button" className="location-form__btn">Get weather</button>
-    </div>
+    <form className={classes} onSubmit={props.onSubmit}>
+      <input
+        type="search"
+        name="place"
+        className="location-form__input"
+        placeholder="St. George, Utah" />
+      <button type="submit" className="location-form__btn">
+        Get weather
+      </button>
+    </form>
   );
 };
+
+export default LocationForm;

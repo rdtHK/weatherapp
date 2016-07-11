@@ -1,5 +1,5 @@
 import React from "react";
-import LocationForm from "./locationForm";
+import LocationFormContainer from "../containers/locationFormContainer";
 
 export default (props) => {
   return (
@@ -7,7 +7,7 @@ export default (props) => {
       <h2 className="home__title">
         Enter a City and State
       </h2>
-      <LocationForm />
+      <LocationFormContainer />
     </div>
   );
 };
