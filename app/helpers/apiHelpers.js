@@ -2,7 +2,7 @@ import axios from "axios";
 
 const appId = 'cd616a825a318a4593a6b285c07aa867';
 
-export const currentWeather = (cityName) => {
+export const fetchCurrentWeather = (cityName) => {
   return axios.get('http://api.openweathermap.org/data/2.5/weather', {
     params: {
       q: cityName,
@@ -14,7 +14,7 @@ export const currentWeather = (cityName) => {
   });
 };
 
-export const forecast = (cityName, days) => {
+export const fetchForecast = (cityName, days) => {
   return axios.get('http://api.openweathermap.org/data/2.5/forecast/daily', {
     params: {
       q: cityName,
@@ -23,6 +23,6 @@ export const forecast = (cityName, days) => {
       APPID: appId,
     }
   }).then((response) => {
-    return response.data;
+    return response.data.list;
   });
 };
