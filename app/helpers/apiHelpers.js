@@ -9,6 +9,8 @@ export const currentWeather = (cityName) => {
       type: 'accurate',
       APPID: appId,
     }
+  }).then((response) => {
+    return response.data;
   });
 };
 
@@ -20,5 +22,7 @@ export const forecast = (cityName, days) => {
       type: 'accurate',
       APPID: appId,
     }
+  }).then((response) => {
+    return response.data;
   });
 };
