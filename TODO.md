@@ -4,3 +4,5 @@
 - better minify?
 - better image minify?
 - better file organization?
+
+- better loading widget
