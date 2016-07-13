@@ -6,6 +6,7 @@ export const fetchCurrentWeather = (cityName) => {
   return axios.get('http://api.openweathermap.org/data/2.5/weather', {
     params: {
       q: cityName,
+      units: 'metric',
       type: 'accurate',
       APPID: appId,
     }
@@ -18,6 +19,7 @@ export const fetchForecast = (cityName, days) => {
   return axios.get('http://api.openweathermap.org/data/2.5/forecast/daily', {
     params: {
       q: cityName,
+      units: 'metric',
       cnt: days,
       type: 'accurate',
       APPID: appId,
