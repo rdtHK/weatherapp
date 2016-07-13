@@ -90,6 +90,7 @@ html, body, .app, .wrapper {
 .forecast {
 	color: #555;
 	text-align: center;
+	cursor: pointer;
 
 	&__title {
 		font-size: 3em;
@@ -107,5 +108,17 @@ html, body, .app, .wrapper {
 
 	&__date {
 		font-size: 1.5em;
+	}
+}
+
+.forecast-detail {
+	font-size: 1.5em;
+	text-align: center;
+	color: #555;
+	font-weight: 300;
+
+	&__date {
+		font-size: 1.5em;
+		margin-bottom: 2em;
 	}
 }

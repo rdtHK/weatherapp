@@ -1,7 +1,6 @@
 import React from "react";
 import WeatherIcon from '../components/weatherIcon';
-import {Dump} from "../helpers/reactHelpers";
-import moment from "moment";
+import {formatDate} from '../helpers/dateHelper';
 
 const Forecast = (props) => {
   if (props.isLoading) {
@@ -12,12 +11,14 @@ const Forecast = (props) => {
     <div className="forecast">
       <h2 className="forecast__title">{props.city}</h2>
       <div className="forecast__days">
-      {props.forecastData.map((data, index) => {
-        const date = moment.unix(data.dt).format('dddd, MMM D');
+      {props.forecastData.map((day, index) => {
         return (
-          <div className="forecast__day" key={index}>
-            <WeatherIcon weather={data.weather[0]} />
-            <p className="forecast__date">{date}</p>
+          <div
+            className="forecast__day"
+            key={index}
+            onClick={(e) => props.onClick(day)}>
+            <WeatherIcon weather={day.weather[0]} />
+            <p className="forecast__date">{formatDate(day.dt)}</p>
           </div>
         );
       })}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropTypes} from "react";
 import Forecast from "../components/forecast";
 import {fetchForecast} from "../helpers/apiHelpers";
 
@@ -23,12 +23,25 @@ export default class ForecastContainer extends React.Component {
         });
       });
   }
+  handleClick(day) {
+    this.context.router.push({
+      pathname: '/detail/' + this.city,
+      state: {
+        day: day
+      }
+    });
+  }
   render() {
     return (
       <Forecast
+        onClick={this.handleClick.bind(this)}
         city={this.city}
         isLoading={this.state.isLoading}
         forecastData={this.state.forecastData} />
     );
   }
 }
+
+ForecastContainer.contextTypes = {
+  router: PropTypes.object.isRequired,
+};

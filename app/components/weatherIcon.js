@@ -22,8 +22,6 @@ const WeatherIcon = (props) => {
     '50n': 'M',
   }[props.weather.icon];
 
-  console.log(props.weather);
-
   return (
     <span className="weather-icon">{icon}</span>
   );
