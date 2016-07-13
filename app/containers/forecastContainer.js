@@ -15,6 +15,14 @@ export default class ForecastContainer extends React.Component {
     return this.props.params.city;
   }
   componentDidMount() {
+    this.fetchData();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.params.city != this.city) {
+      this.fetchData();
+    }
+  }
+  fetchData() {
     fetchForecast(this.city, 5)
       .then((data) => {
         this.setState({
